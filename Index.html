@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unandfess.xyz - Maintenance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        #countdown {
+            font-size: 2rem;
+            font-weight: bold;
+            background: #ff5722;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Unandfess.xyz Sedang Dalam Maintenance</h1>
+    <p>Kami sedang melakukan perbaikan dan akan kembali dalam:</p>
+    <div id="countdown">04:00:00</div>
+    <footer>&copy; 2025 Unandfess.xyz | All Rights Reserved</footer>
+
+    <script>
+        function startCountdown(duration) {
+            let timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = Math.floor(timer / 3600);
+                minutes = Math.floor((timer % 3600) / 60);
+                seconds = timer % 60;
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                document.getElementById("countdown").textContent = hours + ":" + minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    document.getElementById("countdown").textContent = "Maintenance Selesai!";
+                }
+            }, 1000);
+        }
+
+        startCountdown(4 * 60 * 60); // Hitungan mundur 4 jam
+    </script>
+</body>
+  </html>
